@@ -10,7 +10,7 @@ const userSchema = new Schema(
             required: false,
             get: (avatar) => {
                 if (avatar) {
-                    return `${"http://localhost:5500"}${avatar}`;
+                    return `${"https://speakitup.onrender.com"}${avatar}`;
                 }
                 return avatar;
             },
