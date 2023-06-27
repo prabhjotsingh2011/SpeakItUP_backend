@@ -15,7 +15,7 @@ const ACTIONS = require('./actions');
 
 const io = require('socket.io')(server, {
     cors: {
-        origin: "https://649b3afe561cc3089f47b85d--stirring-croissant-704719.netlify.app",
+        origin: "https://649b3ee3e3738b007ce8b73d--stirring-croissant-704719.netlify.app",
         methods: ['GET', 'POST'],
     },
 });
@@ -23,7 +23,7 @@ const io = require('socket.io')(server, {
 app.use(cookieParser());
 const corsOption = {
     credentials: true,
-    origin: ['https://649b3afe561cc3089f47b85d--stirring-croissant-704719.netlify.app']
+    origin: ['https://649b3ee3e3738b007ce8b73d--stirring-croissant-704719.netlify.app']
 };
 app.use(cors(corsOption));
 app.use('/storage', express.static('storage'));
