@@ -72,14 +72,19 @@ class AuthController {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true,
             secure: true,
-            domain: 'https://speak-it-up.netlify.app', 
+            // domain: 'https://speakitup.onrender.com', 
+            domain:  window.location.hostname, 
+
         });
 
         res.cookie('accessToken', accessToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             // httpOnly: true,
             secure: true,
-            domain: 'https://speak-it-up.netlify.app/', 
+            // domain:  'https://speakitup.onrender.com/', 
+            domain:  window.location.hostname, 
+
+
         });
 
         // console.log("accessToken----", accessToken)
