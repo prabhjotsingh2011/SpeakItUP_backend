@@ -72,8 +72,8 @@ class AuthController {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true,
             secure: true,
-            // domain: 'https://speakitup.onrender.com', 
-            domain:  window.location.hostname, 
+            domain: 'speakitup.onrender.com', 
+            // domain:  window.location.hostname, 
 
         });
 
@@ -81,8 +81,8 @@ class AuthController {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             // httpOnly: true,
             secure: true,
-            // domain:  'https://speakitup.onrender.com/', 
-            domain:  window.location.hostname, 
+            domain:  'speakitup.onrender.com', 
+            // domain:  window.location.hostname, 
 
 
         });
