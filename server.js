@@ -8,12 +8,12 @@ const app = express();
 //     rejectUnauthorized: true  
 // };
 var opts = {
-    cert: fs.readFileSync('../frontend/certificate.crt'),
-    key: fs.readFileSync('../frontend/private.key'),
+    // cert: fs.readFileSync('../frontend/certificate.crt'),
+    // key: fs.readFileSync('../frontend/private.key'),
     requestCert: true,
     rejectUnauthorized: true
 };
-const server = require('https').createServer(opts,app);
+const server = require('http').createServer(opts,app);
 const DbConnect = require('./database');
 const router = require('./routes');
 const cors = require('cors');
