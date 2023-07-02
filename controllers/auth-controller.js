@@ -71,11 +71,13 @@ class AuthController {
         res.cookie('refreshToken', refreshToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             // httpOnly: true,
+            secure: true // for https
         });
 
         res.cookie('accessToken', accessToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             // httpOnly: true,
+            secure: true // for https
         });
         console.log("accessToken----", accessToken)
         console.log("refreshToken----", refreshToken)
