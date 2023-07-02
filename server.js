@@ -29,7 +29,8 @@ const io = require('socket.io')(server, {
     },
 });
 
-app.use(cookieParser());
+// app.use(cookieParser());
+app.use(cookieParser({ secure: true }));
 const corsOption = {
     credentials: true,
     

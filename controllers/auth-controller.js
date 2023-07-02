@@ -71,15 +71,17 @@ class AuthController {
         res.cookie('refreshToken', refreshToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true,
-            // secure: true // for https
+            secure: true,
+            domain: 'https://speak-it-up.netlify.app', 
         });
 
         res.cookie('accessToken', accessToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
-            httpOnly: true,
-            // secure: true // for https
+            // httpOnly: true,
+            secure: true,
+            domain: 'https://speak-it-up.netlify.app/', 
         });
-        
+
         // console.log("accessToken----", accessToken)
         // console.log("refreshToken----", refreshToken)
 

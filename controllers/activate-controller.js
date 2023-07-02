@@ -21,7 +21,7 @@ class ActivateController {
             // user.avatar = `/storage/${imagePath}`;
             user.avatar=avatar;
             user.save();
-           return res.json({ user: new UserDto(user), auth: true });
+            return res.json({ user: new UserDto(user), auth: true });
         } catch (err) {
             res.status(500).json({ message: 'Something went wrong!' });
         }
