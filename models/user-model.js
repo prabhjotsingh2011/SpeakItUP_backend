@@ -10,7 +10,9 @@ const userSchema = new Schema(
             required: false,
             get: (avatar) => {
                 if (avatar) {
-                    return `${"https://speakitup.onrender.com"}${avatar}`;
+                    // return `${"https://speakitup.onrender.com"}${avatar}`; 
+                    return avatar; 
+
                 }
                 return avatar;
             },
