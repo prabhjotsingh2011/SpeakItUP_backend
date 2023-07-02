@@ -1,9 +1,15 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
+// var opts = {
+//     requestCert: true,
+//     rejectUnauthorized: true  
+// };
 var opts = {
+    cert: fs.readFileSync('../frontend/certificate.crt'),
+    key: fs.readFileSync('../frontend/private.key'),
     requestCert: true,
-    rejectUnauthorized: true  
+    rejectUnauthorized: true
 };
 const server = require('https').createServer(opts,app);
 const DbConnect = require('./database');
@@ -30,6 +36,7 @@ const corsOption = {
 
     
 };
+
 app.use(cors(corsOption));
 app.use('/storage', express.static('storage'));
 
