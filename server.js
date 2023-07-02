@@ -39,6 +39,11 @@ const corsOption = {
 
     
 };
+app.use(function(req, res, next) {  
+    res.header('Access-Control-Allow-Origin', req.headers.origin);
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});  
 
 app.use(cors(corsOption));
 app.use('/storage', express.static('storage'));
