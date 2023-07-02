@@ -72,7 +72,7 @@ class AuthController {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true,
             secure: true,
-            domain: 'speakitup.onrender.com', 
+            domain: 'speak-it-up.netlify.app', 
             // domain:  window.location.hostname, 
 
         });
@@ -81,7 +81,7 @@ class AuthController {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             // httpOnly: true,
             secure: true,
-            domain:  'speakitup.onrender.com', 
+            domain:  'speak-it-up.netlify.app', 
             // domain:  window.location.hostname, 
 
 
