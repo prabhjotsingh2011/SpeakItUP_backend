@@ -3,6 +3,7 @@ const tokenService = require('../services/token-service');
 module.exports = async function (req, res, next) {
     try {
         const { accessToken } = req.cookies;
+        console.log("accessToken in middleware-----",accessToken)
         
         if (!accessToken) {
             throw new Error();

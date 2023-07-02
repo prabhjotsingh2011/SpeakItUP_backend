@@ -77,13 +77,15 @@ class AuthController {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true,
         });
+        console.log("accessToken----", accessToken)
+        console.log("refreshToken----", refreshToken)
 
         const userDto = new UserDto(user);
         res.json({ user: userDto, auth: true });
     }
 
     async refresh(req, res) {
-        console.log('refresh')
+        // console.log('refresh')
         // get refresh token from cookie
         const { refreshToken: refreshTokenFromCookie } = req.cookies;
         // check if token is valid
