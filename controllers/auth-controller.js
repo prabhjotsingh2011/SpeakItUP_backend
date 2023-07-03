@@ -79,8 +79,8 @@ class AuthController {
         //     // domain:  window.location.hostname, 
 
         // });
-        res.cookie('refreshToken',refreshToken,{sameSite: 'strict',secure:true})
-        res.cookie('accessToken', accessToken,{sameSite: 'strict',secure:true})
+        res.cookie('refreshToken',refreshToken,{sameSite: 'none',secure:true})
+        res.cookie('accessToken', accessToken,{sameSite: 'none',secure:true})
         // res.cookie('accessToken', accessToken, {
         //     maxAge: 1000 * 60 * 60 * 24 * 30,
         //     // httpOnly: false,
@@ -143,7 +143,7 @@ class AuthController {
             return res.status(500).json({ message: 'Internal error' });
         }
         // put in cookie
-        res.cookie('refreshToken', refreshToken,{sameSite: 'strict',secure:true})
+        res.cookie('refreshToken', refreshToken,{sameSite: 'none',secure:true})
         // res.cookie('refreshToken', refreshToken, {
         //     maxAge: 1000 * 60 * 60 * 24 * 30,
         //     // httpOnly: false,
@@ -153,7 +153,7 @@ class AuthController {
         // });
 
 
-        res.cookie('accessToken', accessToken,{sameSite: 'strict',secure:true})
+        res.cookie('accessToken', accessToken,{sameSite: 'none',secure:true})
 
         // res.cookie('accessToken', accessToken, {
         //     maxAge: 1000 * 60 * 60 * 24 * 30,
