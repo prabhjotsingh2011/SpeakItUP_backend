@@ -68,30 +68,31 @@ class AuthController {
 
         await tokenService.storeRefreshToken(refreshToken, user._id);
 
-        res.cookie('refreshToken', refreshToken, {
-            maxAge: 1000 * 60 * 60 * 24 * 30,
-            // httpOnly: false,
-            secure: true, // Ensures the cookie is only sent over HTTPS
-            httpOnly: true, // Makes the cookie inaccessible to JavaScript
-            sameSite: 'strict' // Enforces same-site cookie behavior
-            // secure: true,
-            // domain: 'speak-it-up.netlify.app', 
-            // domain:  window.location.hostname, 
+        // res.cookie('refreshToken', refreshToken, {
+        //     maxAge: 1000 * 60 * 60 * 24 * 30,
+        //     // httpOnly: false,
+        //     secure: true, // Ensures the cookie is only sent over HTTPS
+        //     httpOnly: true, // Makes the cookie inaccessible to JavaScript
+        //     sameSite: 'strict' // Enforces same-site cookie behavior
+        //     // secure: true,
+        //     // domain: 'speak-it-up.netlify.app', 
+        //     // domain:  window.location.hostname, 
 
-        });
+        // });
+        res.cookie('refreshToken',refreshToken)
+        res.cookie('accessToken', accessToken)
+        // res.cookie('accessToken', accessToken, {
+        //     maxAge: 1000 * 60 * 60 * 24 * 30,
+        //     // httpOnly: false,
+        //     secure: true, // Ensures the cookie is only sent over HTTPS
+        //     httpOnly: true, // Makes the cookie inaccessible to JavaScript
+        //     sameSite: 'strict' // Enforces same-site cookie behavior
+        //     // secure: true,
+        //     // domain:  'speak-it-up.netlify.app', 
+        //     // domain:  window.location.hostname, 
 
-        res.cookie('accessToken', accessToken, {
-            maxAge: 1000 * 60 * 60 * 24 * 30,
-            // httpOnly: false,
-            secure: true, // Ensures the cookie is only sent over HTTPS
-            httpOnly: true, // Makes the cookie inaccessible to JavaScript
-            sameSite: 'strict' // Enforces same-site cookie behavior
-            // secure: true,
-            // domain:  'speak-it-up.netlify.app', 
-            // domain:  window.location.hostname, 
 
-
-        });
+        // });
 
         // console.log("accessToken----", accessToken)
         // console.log("refreshToken----", refreshToken)
@@ -142,21 +143,25 @@ class AuthController {
             return res.status(500).json({ message: 'Internal error' });
         }
         // put in cookie
-        res.cookie('refreshToken', refreshToken, {
-            maxAge: 1000 * 60 * 60 * 24 * 30,
-            // httpOnly: false,
-            secure: true, // Ensures the cookie is only sent over HTTPS
-            httpOnly: true, // Makes the cookie inaccessible to JavaScript
-            sameSite: 'strict' // Enforces same-site cookie behavior
-        });
+        res.cookie('refreshToken', refreshToken)
+        // res.cookie('refreshToken', refreshToken, {
+        //     maxAge: 1000 * 60 * 60 * 24 * 30,
+        //     // httpOnly: false,
+        //     secure: true, // Ensures the cookie is only sent over HTTPS
+        //     httpOnly: true, // Makes the cookie inaccessible to JavaScript
+        //     sameSite: 'strict' // Enforces same-site cookie behavior
+        // });
 
-        res.cookie('accessToken', accessToken, {
-            maxAge: 1000 * 60 * 60 * 24 * 30,
-            // httpOnly: false,
-            secure: true, // Ensures the cookie is only sent over HTTPS
-            httpOnly: true, // Makes the cookie inaccessible to JavaScript
-            sameSite: 'strict' // Enforces same-site cookie behavior
-        });
+
+        res.cookie('accessToken', accessToken)
+
+        // res.cookie('accessToken', accessToken, {
+        //     maxAge: 1000 * 60 * 60 * 24 * 30,
+        //     // httpOnly: false,
+        //     secure: true, // Ensures the cookie is only sent over HTTPS
+        //     httpOnly: true, // Makes the cookie inaccessible to JavaScript
+        //     sameSite: 'strict' // Enforces same-site cookie behavior
+        // });
 
         // response
         const userDto = new UserDto(user);
