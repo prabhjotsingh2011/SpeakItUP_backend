@@ -33,17 +33,11 @@ const io = require('socket.io')(server, {
 app.use(cookieParser({ secure: true }));
 const corsOption = {
     credentials: true,
-    
     // origin: ['http://localhost:3000']
     origin: ['https://speak-it-up.netlify.app']
 
     
 };
-app.use(function(req, res, next) {  
-    res.header('Access-Control-Allow-Origin', req.headers.origin);
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});  
 
 app.use(cors(corsOption));
 app.use('/storage', express.static('storage'));
@@ -56,6 +50,12 @@ app.use(router);
 app.get('/', (req, res) => {
     res.send('Hello from express Js');
 });
+app.use(function(req, res, next) {  
+    res.header('Access-Control-Allow-Origin', req.headers.origin);
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});  
+
 
 // Sockets
 const socketUserMap = {};
