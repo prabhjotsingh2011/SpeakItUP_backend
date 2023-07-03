@@ -30,7 +30,7 @@ const io = require('socket.io')(server, {
 });
 
 // app.use(cookieParser());
-app.use(cookieParser({ secure: true }));
+app.use(cookieParser());
 const corsOption = {
     credentials: true,
     // origin: ['http://localhost:3000']
@@ -50,11 +50,11 @@ app.use(router);
 app.get('/', (req, res) => {
     res.send('Hello from express Js');
 });
-app.use(function(req, res, next) {  
-    res.header('Access-Control-Allow-Origin', req.headers.origin);
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});  
+// app.use(function(req, res, next) {  
+//     res.header('Access-Control-Allow-Origin', req.headers.origin);
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     next();
+// });  
 
 
 // Sockets

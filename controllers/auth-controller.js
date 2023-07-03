@@ -70,7 +70,10 @@ class AuthController {
 
         res.cookie('refreshToken', refreshToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
-            httpOnly: false,
+            // httpOnly: false,
+            secure: true, // Ensures the cookie is only sent over HTTPS
+            httpOnly: true, // Makes the cookie inaccessible to JavaScript
+            sameSite: 'strict' // Enforces same-site cookie behavior
             // secure: true,
             // domain: 'speak-it-up.netlify.app', 
             // domain:  window.location.hostname, 
@@ -79,7 +82,10 @@ class AuthController {
 
         res.cookie('accessToken', accessToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
-            httpOnly: false,
+            // httpOnly: false,
+            secure: true, // Ensures the cookie is only sent over HTTPS
+            httpOnly: true, // Makes the cookie inaccessible to JavaScript
+            sameSite: 'strict' // Enforces same-site cookie behavior
             // secure: true,
             // domain:  'speak-it-up.netlify.app', 
             // domain:  window.location.hostname, 
@@ -138,17 +144,23 @@ class AuthController {
         // put in cookie
         res.cookie('refreshToken', refreshToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
-            httpOnly: false,
+            // httpOnly: false,
+            secure: true, // Ensures the cookie is only sent over HTTPS
+            httpOnly: true, // Makes the cookie inaccessible to JavaScript
+            sameSite: 'strict' // Enforces same-site cookie behavior
         });
 
         res.cookie('accessToken', accessToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
-            httpOnly: false,
+            // httpOnly: false,
+            secure: true, // Ensures the cookie is only sent over HTTPS
+            httpOnly: true, // Makes the cookie inaccessible to JavaScript
+            sameSite: 'strict' // Enforces same-site cookie behavior
         });
-        
+
         // response
         const userDto = new UserDto(user);
-        
+
         res.json({ user: userDto, auth: true });
 
 
